@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<!-- 
+	<bean id="specification" class="com.ioc.example">
+	<property name="make" value="Toyota"></property>
+	<property name="model" value="Corolla"></property>
+	</bean>
+	-->
+<!-- Now this bean's creation responsibility is given to the contrcutor  -->	
+	<!--<bean id="car" class="car.constructor.injection.Car">
+		<constructor-arg ref="specification"></constructor-arg>
+	</bean>-->
+	
+	<bean id="databaseProvider" class="com.ioc.example.UserDatabaseProvider"></bean>
+	<bean id="webserviceProvider" class="com.ioc.example.WebServiceDataProvider"></bean>
+	
+	<bean id="firstbean" class="com.ioc.example.UserManager">
+		<constructor-arg ref="databaseProvider"></constructor-arg>
+	</bean>
+	<bean id="secondbean" class="com.ioc.example.UserManager">
+		<constructor-arg ref="webserviceProvider"></constructor-arg>
+	</bean>
+</beans>

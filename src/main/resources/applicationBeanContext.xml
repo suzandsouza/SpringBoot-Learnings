@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean id="myBean" class="car.example.bean.MyBean">
+	<!-- Bean definitions can have zero or more properties. Property elements correspond to JavaBean setter methods exposed by the bean classes. 
+	Spring supports primitives, references to other beans in the same or related factories, lists, maps and properties.-->
+	<!-- this will call the setter method in mybean-->
+	<property name="message" value="I am the first bean"></property>
+	<!--we are telling sping that I have this class-->
+	</bean>
+</beans>
